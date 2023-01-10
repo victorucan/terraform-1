@@ -19,7 +19,7 @@ resource "aws_subnet" "subnet1" {
 
 resource "aws_subnet" "subnet2" {
   vpc_id     = aws_vpc.pri_vpc.id
-  cidr_block = "172.2.0.0/24"
+  cidr_block = "172.2.1.0/24"
 
   tags = {
     Name = "sub2"
