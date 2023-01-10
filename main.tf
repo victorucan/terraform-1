@@ -8,6 +8,16 @@ resource "aws_vpc" "pri_vpc" {
   }
 }
 
+resource "aws_ec2_availability_zone_group" "zone1" {
+  group_name    = "us-east-2a"
+  opt_in_status = "opted-in"
+}
+
+resource "aws_ec2_availability_zone_group" "zone2" {
+  group_name    = "us-east-2b"
+  opt_in_status = "opted-in"
+}
+
 resource "aws_subnet" "subnet1" {
   vpc_id     = aws_vpc.pri_vpc.id
   cidr_block = "172.2.0.0/24"
