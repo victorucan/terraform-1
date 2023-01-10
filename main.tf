@@ -53,3 +53,8 @@ resource "aws_route_table_association" "as2" {
   subnet_id      = aws_subnet.subnet2.id
   route_table_id = aws_route_table.rt.id
 }
+
+resource "aws_key_pair" "key" {
+  key_name   = "mykey"
+  public_key = file("/home/ubuntu/.ssh/mykey.pub")
+}
