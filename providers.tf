@@ -7,7 +7,7 @@ terraform {
   }
 }
 provider "aws" {
-  shared_config_files      = ["/home/ubuntu/.aws/config"]
-  shared_credentials_files = ["/home/ubuntu/.aws/credentials"]
+  shared_config_files      = ["/home/ubuntu/.aws/conf"]
+  shared_credentials_files = ["/home/ubuntu/.aws/creds"]
   profile = "default"
 }
