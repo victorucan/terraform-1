@@ -85,6 +85,7 @@ resource "aws_instance" "web" {
   subnet_id = aws_subnet.subnet1.id
   user_data = file("userdata.tpl")
   vpc_security_group_ids = [aws_security_group.dev_sg.id]
+  associate_public_ip_address = true
 
   tags = {
     Name = "nginx"
