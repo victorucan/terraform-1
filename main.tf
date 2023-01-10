@@ -58,3 +58,19 @@ resource "aws_key_pair" "key" {
   key_name   = "mykey"
   public_key = file("/home/ubuntu/.ssh/mykey.pub")
 }
+
+resource "aws_instance" "web" {
+  instance_type = "t3.micro"
+  ami           = "ami-0ff39345bd62c82a5"
+
+  tags = {
+    Name = "nginx"
+  }
+  key_name = aws_key_pair.key.id
+  subnet_id = aws_subnet.subnet1.id
+  user_data = file("userdata.tpl")
+
+  root_block_device {
+    volume_size= 10
+  }
+}
