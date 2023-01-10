@@ -66,11 +66,11 @@ resource "aws_instance" "web" {
   tags = {
     Name = "nginx"
   }
-  key_name = aws_key_pair.key.id
+  key_name  = aws_key_pair.key.id
   subnet_id = aws_subnet.subnet1.id
   user_data = file("userdata.tpl")
 
   root_block_device {
-    volume_size= 10
+    volume_size = 10
   }
 }
